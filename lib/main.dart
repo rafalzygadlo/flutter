@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'presentation/pages/topmenu.dart';
+import 'package:flutter_application_2/presentation/pages/welcome.dart';
 
 void main() => runApp(const MyApp());
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const TopMenuPage(),
+      home: WelcomePage(),
     );
   }
 
