@@ -14,20 +14,31 @@ class WelcomePageState extends State<WelcomePage> {
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Center(
-          child: 
-        Form(
-          /*key: _formKey,*/
-          child: 
+          child:    
           Column(
             children: [
-              Text('Welcome. Choose Login to enter application'),
-              ElevatedButton(
-                onPressed:
+              Card(
+                elevation: 5,
+                
+                child: Column(
+                  children: [
+                  Text('Welcome. Choose Login to enter application'),
+                  ElevatedButton(
+                    onPressed:
                     () =>
                         {} /* Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage())) */,
-                child: Text('Login'),
+                      child: Text('Login'),
               ),
-              Text('Here you can register new account'),
+          ],)
+          ),
+          
+          Card(
+            child:Padding(
+              
+              padding: EdgeInsets.all(30),
+              child:  
+            Column(children: [
+            Text('Here you can register new account'),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -36,12 +47,13 @@ class WelcomePageState extends State<WelcomePage> {
                   );
                 },
                 child: Text('Register'),
-              ),
-            ],
+              )
+            ]),
+            ),
           ),
-        ),
+      ]),
       ),
-      ),
-    );
-  }
+    ),
+  );
+}
 }
