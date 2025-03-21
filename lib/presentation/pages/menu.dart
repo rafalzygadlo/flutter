@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/presentation/pages/home.dart';
 import 'package:flutter_application_2/presentation/pages/home/profile.dart';
 
-class TopMenuPage extends StatelessWidget {
-  const TopMenuPage({super.key});
+class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
     
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,7 @@ class TopMenuPage extends StatelessWidget {
       length: 4, // Liczba zakładek
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text('Menu'),
           bottom: TabBar(
             tabs: [

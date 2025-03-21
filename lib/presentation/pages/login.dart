@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/presentation/pages/menu.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -7,51 +7,40 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
-      
-void _submitForm(BuildContext context) {
+  void _submitForm(BuildContext context) {
     
-      // Jeśli formularz poprawny, pokaż komunikat
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Dane zapisane poprawnie!')),
-      );    
-}
+    /*
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Dane zapisane poprawnie!')));
+    */
+
+    final route = MaterialPageRoute(builder: (context) => MenuPage());
+
+    Navigator.pushAndRemoveUntil(context, route, (route) => false);
+  }
 
   @override
   Widget build(BuildContext context) {
-    
-   return Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text('Login')),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Form(
-          /*key: _formKey,*/
           child: Column(
             children: [
-              TextFormField(
-                /*controller: _ibanController,*/
-                decoration: InputDecoration(labelText: 'IBAN'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Podaj numer IBAN';
-                  }
-                  if (!RegExp(r'^[A-Z]{2}\d{18,}$').hasMatch(value)) {
-                    return 'Niepoprawny IBAN';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                /*controller: _bankNameController,*/
-                decoration: InputDecoration(labelText: 'Nazwa banku'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Podaj nazwę banku';
-                  }
-                  return null;
-                },
-              ),
+              TextFormField(decoration: InputDecoration(labelText: 'email')),
+              SizedBox(height: 10),
+              TextFormField(decoration: InputDecoration(labelText: 'Password')),
               SizedBox(height: 20),
-              ElevatedButton(
+
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                  ),
+                ),
                 onPressed: () => _submitForm(context),
                 child: Text('Login'),
               ),
@@ -60,17 +49,5 @@ void _submitForm(BuildContext context) {
         ),
       ),
     );
-    
   }
-      
- 
-  }
-
-
- 
- 
-
-
-
-
-
+}

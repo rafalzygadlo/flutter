@@ -11,49 +11,64 @@ class WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Welcome')),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Center(
-          child:    
-          Column(
-            children: [
-              Card(
-                elevation: 5,
-                
-                child: Column(
-                  children: [
-                  Text('Welcome. Choose Login to enter application'),
-                  ElevatedButton(
-                    onPressed:
-                    () =>
-                        {} /* Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage())) */,
-                      child: Text('Login'),
-              ),
-          ],)
-          ),
-          
-          Card(
-            child:Padding(
-              
-              padding: EdgeInsets.all(30),
-              child:  
-            Column(children: [
-            Text('Here you can register new account'),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                  );
-                },
-                child: Text('Register'),
-              )
-            ]),
-            ),
-          ),
-      ]),
+      body: Column(
+        children: [_buttonLogin(), _buttonRegister()]
       ),
-    ),
-  );
-}
+    );
+  }
+
+  Widget _buttonLogin() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(10,10,10,10),
+      child: Column(
+        children: [
+           Text('Here you can register new account'),
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              minimumSize: Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+              ),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            child: Text('Login'),
+          ),
+        ],
+      ),
+    );
+  }
+
+Widget _buttonRegister() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(10,10,10,10),
+      child: Column(
+        children: [
+           Text('Here you can register new account'),
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              minimumSize: Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+              ),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            child: Text('Register'),
+          ),
+        ],
+      ),
+    );
+  }
+
+
+  
 }
