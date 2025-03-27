@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'home/bank.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
