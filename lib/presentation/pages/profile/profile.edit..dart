@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class ProfileEditPage extends StatefulWidget {
+  const ProfileEditPage({super.key});
 
   @override
   ProfilePageState createState() => ProfilePageState();
 }
 
-class ProfilePageState extends State<ProfilePage> {
+class ProfilePageState extends State<ProfileEditPage> {
       
-void _submitForm(BuildContext context) {
+void saveForm(BuildContext context) {
     
-      // Jeśli formularz poprawny, pokaż komunikat
+      
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Dane zapisane poprawnie!')),
       );
@@ -25,7 +25,6 @@ void _submitForm(BuildContext context) {
    return Scaffold(
     appBar: AppBar(
       title: Text('Profile'),
-      centerTitle: true,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -45,36 +44,23 @@ void _submitForm(BuildContext context) {
               ),
               SizedBox( height: 20),
               TextFormField(
-                /*controller: _ibanController,*/
-                decoration: InputDecoration(labelText: 'Email'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Podaj numer IBAN';
-                  }
-                  if (!RegExp(r'^[A-Z]{2}\d{18,}$').hasMatch(value)) {
-                    return 'Niepoprawny IBAN';
-                  }
-                  return null;
-                },
+                decoration: InputDecoration(
+                  labelText: 'First Name',
+                  border: OutlineInputBorder(),
+                  ),
+               
               ),
               SizedBox( height: 20),
               TextFormField(
-                /*controller: _bankNameController,*/
                 decoration: InputDecoration(
-                  hintText: 'Wpisz swój email', // Wskazówka w środku pola
                   border: OutlineInputBorder(),
-                  labelText: 'Phone'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Podaj nazwę banku';
-                  }
-                  return null;
-                },
+                  labelText: 'Last Name'),
+                
               ),
               SizedBox( height: 20),
               ElevatedButton(
-                onPressed: () => _submitForm(context),
-                child: Text('Edit profile'),
+                onPressed: () => saveForm(context),
+                child: Text('Save'),
               ),
             ],
           ),

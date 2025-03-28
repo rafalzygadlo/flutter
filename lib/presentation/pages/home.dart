@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/main.dart';
 import 'home/bank.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+ 
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
       body: ListView(
         children: [
-           CircleAvatar(
-                radius: 100,
-                //backgroundImage: AssetImage('assets/avatars/1.jpg'),
-                child: const Text(
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,    
-                    fontSize: 30
-                  ),
-                  'AH'),
-              ),
           ListTile(
             leading: Icon(Icons.balance),
             title: Text('Bank Konto'),

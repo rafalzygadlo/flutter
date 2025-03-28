@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/presentation/pages/login.dart';
+import 'package:flutter_application_2/presentation/pages/otp.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class WelcomePageState extends State<WelcomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => OtpPage()),
               );
             },
             child: Text('Login'),

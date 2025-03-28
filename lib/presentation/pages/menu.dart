@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/presentation/pages/home.dart';
-import 'package:flutter_application_2/presentation/pages/home/profile/profile.dart';
+import 'package:flutter_application_2/presentation/pages/profile/profile.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
