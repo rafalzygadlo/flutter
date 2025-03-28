@@ -23,6 +23,10 @@ void _submitForm(BuildContext context) {
   Widget build(BuildContext context) {
     
    return Scaffold(
+    appBar: AppBar(
+      title: Text('Profile'),
+      centerTitle: true,
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
           child: Form(

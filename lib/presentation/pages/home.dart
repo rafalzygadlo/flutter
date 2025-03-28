@@ -10,9 +10,20 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
+           CircleAvatar(
+                radius: 100,
+                //backgroundImage: AssetImage('assets/avatars/1.jpg'),
+                child: const Text(
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,    
+                    fontSize: 30
+                  ),
+                  'AH'),
+              ),
           ListTile(
             leading: Icon(Icons.balance),
             title: Text('Bank Konto'),
+            trailing: Icon(Icons.chevron_right),
             onTap: () {
               Navigator.push(
                 context,
@@ -23,6 +34,7 @@ class HomePage extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Steuer Info'),
+            trailing: Icon(Icons.chevron_right),
             onTap: () {
               Navigator.push(
                 context,
@@ -33,6 +45,7 @@ class HomePage extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Steuer Info'),
+            trailing: Icon(Icons.chevron_right),
             onTap: () {
               Navigator.push(
                 context,
