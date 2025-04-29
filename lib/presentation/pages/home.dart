@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/main.dart';
+import 'package:flutter_application_2/presentation/pages/image.dart';
 import 'home/bank.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
- 
 
 
   @override
@@ -29,12 +28,12 @@ class HomePage extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Steuer Info'),
+            title: Text('Image page'),
             trailing: Icon(Icons.chevron_right),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Text('aaa')),
+                MaterialPageRoute(builder: (context) => ImagePage()),
               );
             },
           ),
