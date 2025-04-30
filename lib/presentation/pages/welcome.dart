@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/presentation/pages/login.dart';
 import 'package:flutter_application_2/presentation/pages/otp.dart';
+import 'package:flutter_application_2/presentation/pages/register.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -11,7 +12,8 @@ class WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Welcome')),
+      appBar: AppBar(title: Text('Welcome'),       
+      ),
       body: Column(
         children: [_buttonLogin(), _buttonRegister()]
       ),
@@ -23,21 +25,14 @@ class WelcomePageState extends State<WelcomePage> {
       padding: EdgeInsets.fromLTRB(10,10,10,10),
       child: Column(
         children: [
-           Text('Here you can register new account'),
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              minimumSize: Size(double.infinity, 50),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
-            ),
+          TextButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => OtpPage()),
               );
             },
-            child: Text('Login'),
+            child: Text('Here you can login\n to your new account.'),
           ),
         ],
       ),
@@ -49,27 +44,19 @@ Widget _buttonRegister() {
       padding: EdgeInsets.fromLTRB(10,10,10,10),
       child: Column(
         children: [
-           Text('Here you can register new account'),
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              minimumSize: Size(double.infinity, 50),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
-            ),
+          TextButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => RegisterPage()),
               );
             },
-            child: Text('Register'),
+            child: Text('Here you can register new account'),
           ),
         ],
       ),
     );
   }
-
-
   
 }
+

@@ -11,7 +11,7 @@ class ProfilePage extends StatefulWidget {
 
 class ProfilePageState extends State<ProfilePage> {
 
- Profile profile = Profile(firstName: 'rafal', lastName: 'zygadlo', email: 'qotsa@op.pl', weight: 81.2);
+ Profile profile = Profile(initials: 'RZ', firstName: 'rafal', lastName: 'zygadlo', email: 'qotsa@op.pl', weight: 81.2);
 
   void _editForm(BuildContext context) {
     Navigator.push(
@@ -32,9 +32,9 @@ class ProfilePageState extends State<ProfilePage> {
             children: [
               CircleAvatar(
                 radius: 40,
-                child: const Text(
+                child: Text(
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  'AH',
+                  profile.initials,
                 ),
               ),
               SizedBox(height: 20),

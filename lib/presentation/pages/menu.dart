@@ -20,7 +20,10 @@ class MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //appBar: AppBar(actions: <Widget> [IconButton(onPressed: (){}, icon: Icon(Icons.notifications) )],),
       body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
+      bottomSheet: Text('2025 my app'),
+      
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {

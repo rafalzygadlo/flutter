@@ -34,14 +34,7 @@ class LoginPageState extends State<LoginPage> {
               SizedBox(height: 10),
               TextFormField(decoration: InputDecoration(labelText: 'Password')),
               SizedBox(height: 20),
-
               OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                ),
                 onPressed: () => _submitForm(context),
                 child: Text('Login'),
               ),
